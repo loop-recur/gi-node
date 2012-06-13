@@ -15,6 +15,8 @@ var routes = require('./routes').routes,
     },
 
     route = function(path, res, query) {
+			path = path.replace(/\.\w+?$/, '');
+			console.log(path);
       _getRoute(path, function(controller, action) {
         if (routes[controller] && routes[controller][action]) { 
           routes[controller][action](res, query); 
