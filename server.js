@@ -6,7 +6,6 @@ var http = require('http'),
       http.createServer(function(req, res) {
         var query = url.parse(req.url, true).query,
             path = url.parse(req.url).pathname;
-
         route(path, res, query);
       }).listen(port);
 
